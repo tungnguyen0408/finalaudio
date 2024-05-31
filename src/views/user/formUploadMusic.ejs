@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Blog âm nhạc chất" />
+    <meta property="og:image" content="https://i.imgur.com/rxh17is.jpg" />
+    <title>Blog Music Vip Pro</title>
+    <link rel="stylesheet" href="main.css" />
+    <script
+      src="https://kit.fontawesome.com/dfb7590c37.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <!-- Hello, this is header -->
+    <!-- Hello, this is header -->
+
+    <div id="header" class="animate__animated animate__fadeInDown">
+      <div id="listMenuID" class="listMenu">
+        <ul>
+          <li class="theLoaiID">
+            <p>Thể loại</p>
+            <ol class="theLoai viewTL"></ol>
+          </li>
+          <li class="uploadID">Đăng bài hát</li>
+          <li class="requestID">Yêu cầu bài hát</li>
+          <li class="suggestionID">Góp ý</li>
+          <li class="loginID">Đăng nhập</li>
+          <li class="accountID">
+            <p class="nameDisplay">Tên người dùng</p>
+            <ol class="account viewAccount">
+              <li class="yeuThichID">Danh sách yêu thích</li>
+              <li class="signoutID">Đăng xuất</li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+      <div class="leftHeader">
+        <i class="iconHeader fa fa-bars" id="iconMenu" onclick="showMenu()"></i>
+        <a id="logo" class="viewLogo" href="/" style="text-decoration: none">
+          <i class="fas fa-headphones-alt"></i> BLOG ÂM NHẠC
+        </a>
+
+        <div id="viewSearchID" class="viewSearch">
+          <input
+            type="search"
+            id="searchHomePage"
+            placeholder="Tìm theo bài hát hoặc ca sĩ"
+            autocomplete="off"
+          />
+          <ol id="searchMusic"></ol>
+        </div>
+        <i
+          class="viewIconSearch iconHeader fa fa-search"
+          id="iconSearch"
+          onclick="viewSearchHeader()"
+        ></i>
+      </div>
+      <div class="rightHeader" id="rightMenuID">
+        <a class="accountID">
+          <p class="nameDisplay">Tên người dùng</p>
+          <ol class="account">
+            <li class="yeuThichID">Danh sách yêu thích</li>
+            <li class="signoutID">Đăng xuất</li>
+          </ol>
+        </a>
+        <a class="loginID">Đăng nhập</a>
+        <a class="suggestionID">Góp ý</a>
+        <a class="requestID">Yêu cầu bài hát</a>
+        <a class="uploadID">Đăng bài hát</a>
+        <a class="theLoaiID">
+          <p>Thể loại</p>
+          <ol class="theLoai scale-up-ver-top"></ol>
+        </a>
+      </div>
+    </div>
+
+    <div id="dangbaihat" class="containerfeatures">
+      <div class="huongdan">
+        <div>
+          <h1 class="heading">Hướng dẫn</h1>
+        </div>
+        <div class="body">
+          <p>
+            <strong>Cảm ơn bạn rất nhiều!</strong>
+            <br />
+            Chân thành cảm ơn bạn vì những đóng góp của bạn đối với cộng đồng
+            yêu âm nhạc. Cộng đồng yêu âm nhạc cần những người như bạn.
+            <br />
+            <br />
+            <strong>Để bài đăng của bạn nhanh được duyệt nhất, hãy...</strong>
+            <br />
+            - Điền lời bài hát đầy đủ
+            <br />
+            - Bao gồm file nhạc mp3, wav hoặc ogg
+            <br />
+            - Thể loại, giúp phân loại bài hát
+            <br />
+            - Thông tin ca sĩ, tác giả đúng và đủ
+            <br />
+            <br />
+            <em>Xin cảm ơn bạn đã đóng góp!</em>
+          </p>
+        </div>
+      </div>
+      <div id="upload">
+        <div>
+          <h1 class="heading">Đăng bài hát mới</h1>
+        </div>
+        <form
+          action="/upload"
+          method="post"
+          enctype="multipart/form-data"
+          class="body"
+        >
+          <div class="inputleft">
+            <p>Tên bài hát <span style="color: red">*</span></p>
+            <input
+              class="halfinput"
+              type="text"
+              placeholder="Ví dụ: Cát Bụi"
+              id="nameUpload"
+            />
+            <p>Ca sĩ/Ban nhạc</p>
+            <input
+              class="halfinput"
+              type="text"
+              placeholder="Ví dụ: Cẩm Ly, Đan Trường"
+              id="singerUpload"
+            />
+          </div>
+          <div class="inputright">
+            <p>Thể loại</p>
+            <input
+              class="halfinput"
+              type="text"
+              placeholder="Ví dụ: Nhạc Trẻ"
+              id="genreUpload"
+            />
+            <p>Tác giả</p>
+            <input
+              class="halfinput"
+              type="text"
+              placeholder="Ví dụ: Trịnh Công Sơn"
+              id="authorUpload"
+            />
+          </div>
+
+          <div class="clearfloat">
+            <p id="linkadd">Link bài hát <span style="color: red">*</span></p>
+            <input
+              class="longinput"
+              type="text"
+              placeholder="Điền link theo định dạng hợp lệ!"
+              id="linkUpload"
+            />
+            <p>File âm nhạc <span style="color: red">*</span></p>
+            <input
+              class="fileInput"
+              type="file"
+              name="songFile"
+              id="songFileUpload"
+              accept=".mp3, .wav"
+            />
+
+            <p id="lyricsadd">Lời bài hát</p>
+            <textarea class="longtextarea" id="lyricsUpload"></textarea>
+            <p id="uploadResult" class="result"></p>
+          </div>
+        </form>
+        <div class="center" id="addUploadUser">
+          <button id="addUpload" class="button1">Đăng bài hát</button>
+        </div>
+      </div>
+      <div class="fillImage">
+        <img src="./IMAGE/decorimg1.jpeg" alt="" />
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("addUpload")
+        .addEventListener("click", function (event) {
+          // Lấy dữ liệu từ form
+          var songTitle = document.getElementById("nameUpload").value;
+          var songAuthor = document.getElementById("authorUpload").value;
+          var songSinger = document.getElementById("singerUpload").value;
+          var songLyrics = document.getElementById("lyricsUpload").value;
+          var songGenre = document.getElementById("genreUpload").value;
+          var songFile = document.getElementById("songFileUpload").files[0];
+
+          // Tạo formData để gửi dữ liệu
+          var formData = new FormData();
+          formData.append("name", songTitle);
+          formData.append("author", songAuthor);
+          formData.append("singer", songSinger);
+          formData.append("lyrics", songLyrics);
+          formData.append("genre", songGenre);
+          formData.append("songFile", songFile);
+          // Sử dụng fetch hoặc AJAX để gửi formData lên server
+          fetch("/upload", {
+            method: "POST",
+            body: formData,
+          })
+            .then((data) => {
+              console.log(data);
+              document.getElementById("nameUpload").value = "";
+              document.getElementById("singerUpload").value = "";
+              document.getElementById("genreUpload").value = "";
+              document.getElementById("authorUpload").value = "";
+              document.getElementById("linkUpload").value = "";
+              document.getElementById("lyricsUpload").value = "";
+              document.getElementById("songFileUpload").value = "";
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        });
+    </script>
+  </body>
+</html>

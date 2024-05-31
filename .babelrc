@@ -1,0 +1,9 @@
+{
+    "presets": [
+      [
+        "@babel/preset-env"
+      ]
+    ]
+  }
+
+  // cấu hình cho trình compiler đầu tiên 

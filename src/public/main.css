@@ -1,0 +1,1004 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+}
+
+input {
+  height: 25px;
+}
+
+/* Header*/
+
+#header {
+  background: #562386;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  height: 50px;
+  margin-top: 0px;
+  z-index: 1;
+}
+
+#header a {
+  background: #562386;
+  color: white;
+  padding: 12px 15px 12px 15px;
+  font-size: 15px;
+}
+
+#viewSearchID {
+  padding: 12px 15px 12px 15px;
+  font-size: 15px;
+}
+
+.iconHeader {
+  display: none !important;
+  color: white;
+  padding: 15px;
+}
+
+.iconHeader:hover {
+  color: #987fc5;
+  cursor: pointer;
+}
+
+.leftHeader {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.rightHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 50%;
+}
+
+#header a:hover {
+  transition: color 0.3s ease-out;
+  color: #5994c4;
+  cursor: pointer;
+}
+
+#logo {
+  font-weight: bold;
+  cursor: pointer;
+  color: white !important;
+}
+
+#logo:hover {
+  color: #5994c4 !important;
+}
+
+#searchHomePage {
+  width: 300px;
+  height: 22px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #f9fbfb;
+}
+
+#searchMusic {
+  background: white;
+  position: absolute;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#searchMusic li {
+  width: 100%;
+  color: black;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(110, 131, 163, 0.2),
+    0 6px 20px 0 rgba(135, 190, 212, 0.19);
+  padding-top: 2px;
+  text-align: center;
+}
+
+#searchMusic li:hover {
+  cursor: pointer;
+  background: #e4f0f6;
+}
+
+.nameSearch {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.singerSearch {
+  font-size: 13px;
+}
+
+.theLoai {
+  list-style-type: none;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  margin-top: 18px;
+  margin-left: -30px;
+  box-sizing: content-box;
+  min-width: 110px;
+}
+
+.theLoai li {
+  color: white;
+  background-color: #094c72;
+  border-bottom: 0.5px solid #678da3;
+  text-transform: capitalize;
+  font-size: 14px;
+  padding-top: 5px;
+  text-align: center;
+  height: 30px;
+}
+
+.theLoai li:hover {
+  cursor: pointer;
+  background: #036aa6;
+}
+
+.listMenu {
+  display: none;
+}
+
+.listMenuResponsive {
+  display: none;
+}
+
+.accountID {
+  display: none;
+}
+
+.account {
+  list-style-type: none;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  margin-top: 18px;
+  min-width: 200px;
+  margin-left: -150px;
+  box-sizing: content-box;
+}
+.account li {
+  color: white;
+  background-color: #094c72;
+  border-bottom: 0.5px solid #678da3;
+  text-transform: capitalize;
+  padding-top: 5px;
+  text-align: center;
+  height: 30px;
+  box-shadow: 0 4px 8px 0 rgba(110, 131, 163, 0.2),
+    0 6px 20px 0 rgba(135, 190, 212, 0.19);
+}
+
+.account li:hover {
+  cursor: pointer;
+  background: #036aa6;
+}
+
+@media (max-width: 1200px) {
+  .rightHeader {
+    display: none;
+  }
+
+  .leftHeader {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #iconMenu {
+    display: block !important;
+  }
+
+  #listMenuID ul {
+    position: absolute;
+    width: 200px;
+    background: #094c72;
+    color: white;
+    padding-top: 50px;
+    height: auto;
+    text-align: left;
+    list-style-type: none;
+  }
+
+  #listMenuID li {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 1em;
+  }
+
+  #listMenuID li:hover {
+    cursor: pointer;
+    background: rgb(116, 171, 216);
+  }
+
+  #listMenuID .theLoai {
+    position: absolute;
+    left: 230px;
+    width: 200px;
+    background: #094c72;
+    color: white;
+    top: 32px;
+  }
+
+  #listMenuID .account {
+    position: absolute;
+    left: 350px;
+    width: 200px;
+    background: #094c72;
+    color: white;
+    top: 192px;
+  }
+
+  .listMenu {
+    display: none;
+  }
+
+  .listMenuResponsive {
+    display: block;
+  }
+
+  .viewTL {
+    display: none;
+  }
+
+  .viewTLResponsive {
+    display: flex;
+  }
+
+  .viewAccount {
+    display: none;
+  }
+
+  .viewAccountResponsive {
+    display: flex;
+  }
+}
+
+@media (max-width: 900px) {
+  .viewSearch {
+    display: none;
+  }
+
+  .viewSearchResponsive {
+    display: block;
+  }
+
+  .viewIconSearch {
+    display: block !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .viewLogo {
+    display: block;
+  }
+
+  .viewLogoResponsive {
+    display: none;
+  }
+
+  #listMenuID ul {
+    width: 150px;
+  }
+
+  #listMenuID .theLoai {
+    left: 180px;
+    width: 150px;
+  }
+  #listMenuID .account {
+    width: 180px;
+    min-width: 150px;
+    left: 300px;
+    height: auto;
+  }
+}
+
+/*Home Page*/
+
+.container {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+
+#banner {
+  background-image: url("https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  margin-top: 0px;
+  width: 100%;
+  height: 550px;
+  background-size: 100% 100%;
+}
+
+#bannertext {
+  padding-top: 170px;
+  padding-left: 55%;
+  padding-right: 30px;
+}
+
+#bannertext h2 {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+}
+
+#des {
+  font-size: 16px;
+  font-style: italic;
+  padding-top: 8px;
+  color: #f9f9f9;
+}
+
+.homePageContent {
+  display: flex;
+}
+
+#accountHPContent {
+  width: 23%;
+  margin: 40px 10px 30px 35px;
+}
+
+.accountHP {
+  height: 55px;
+}
+
+#accountPrompt {
+  font-size: 12.5px;
+  padding: 10px 15px;
+  text-align: center;
+}
+.flexcenter {
+  display: flex;
+  justify-content: center;
+}
+.flexcenter .button1 {
+  margin-right: 15px;
+  margin-left: -10px;
+}
+.column {
+  flex-direction: column;
+}
+#quote {
+  font-size: 17px;
+  padding: 30px 5px 15px 2px;
+  text-align: center;
+  font-style: italic;
+  color: #094c72;
+  background-image: url("https://www.onlygfx.com/wp-content/uploads/2019/03/14-white-grunge-brush-stroke-13.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#cite {
+  font-size: 15px;
+  text-align: right;
+  padding-right: 20px;
+  margin-top: -10px;
+  font-style: italic;
+  color: #055a8c;
+}
+#decorimg {
+  padding-top: 10px;
+  width: 95%;
+  text-align: center;
+  opacity: 0.75;
+  margin: auto;
+}
+
+.listHomePage {
+  width: 35%;
+  margin: 40px 10px 30px 10px;
+}
+
+.listHomePage img {
+  padding-top: 3px;
+  margin: 20px auto;
+  width: 93%;
+  border-radius: 12px;
+}
+
+.headingclickable {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: normal;
+  text-align: center;
+  color: #094c72;
+  padding-bottom: 5px;
+}
+
+.headingclickable:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.body {
+  background: white;
+  box-shadow: 0.5px 1.5px 1.5px 0px lightgray;
+}
+
+.xephang {
+  height: auto;
+}
+
+.xephang ol {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 25px 0px 45px;
+  list-style: none;
+}
+
+.button {
+  background-color: #055a8c;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.xephang li {
+  padding: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.xephang p {
+  display: inline-block;
+}
+
+.name {
+  font-weight: bold;
+  box-sizing: content-box;
+}
+
+.name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sttMusic {
+  margin-left: -20px;
+  width: 35px;
+}
+
+.singer {
+  font-style: italic;
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+.countSeen {
+  color: #0079bf;
+  font-weight: normal;
+  font-size: 12px;
+  float: right;
+}
+
+.yeuThich {
+  color: #c21807;
+  fill: red;
+  font-size: 12px;
+  float: right;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+#countMusicYT {
+  text-align: center;
+  font-weight: bolder;
+  color: #0079bf;
+  width: 100%;
+}
+
+hr {
+  border: none;
+  height: 1.1px;
+  margin: 8px 0px 8px -25px;
+  background-color: #e4f0f6;
+}
+
+.xemthem {
+  text-align: center;
+}
+
+.xemthem p {
+  color: #094c72;
+  font-weight: normal;
+  font-size: 12px;
+  padding-bottom: 15px;
+}
+
+.xemthem p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.changeList {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: #0079bf;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.countList {
+  padding: 0px 30px 0px 30px;
+  font-size: 15px;
+}
+
+.changeListUser {
+  background-color: white;
+  color: #0079bf;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  #banner {
+    background-size: 135% 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  #accountHPContent {
+    display: none !important;
+  }
+  .listHomePage {
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .homePageContent {
+    flex-direction: column;
+  }
+
+  .listHomePage {
+    margin: 20px auto;
+    width: 90%;
+  }
+
+  #banner {
+    background-size: 170% 100%;
+  }
+
+  #bannertext {
+    padding-top: 135px;
+    padding-left: 25%;
+  }
+}
+
+@media (max-width: 600px) {
+  #banner {
+    background-size: 350% 150% !important;
+    height: 360px !important;
+    background-position: 0px -133px;
+  }
+
+  #bannertext {
+    padding-top: 215px;
+    padding-left: 5%;
+  }
+}
+
+/*Page Music*/
+
+.pageMusicContent {
+  display: flex;
+  justify-content: center;
+  padding: 20px 4%;
+}
+
+.pageMusicLeft {
+  height: auto;
+  width: 65%;
+  margin: 0px 20px;
+}
+
+.pageMusicLeft div {
+  margin-top: 20px;
+}
+
+.nameMusic {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.singerTitleMusic {
+  display: inline-block;
+  font-style: italic;
+}
+
+.titlePageMusic {
+  background: white;
+  padding: 20px 15px 20px 30px;
+}
+
+.infoMusic {
+  background: white;
+  padding: 20px 15px 20px 30px;
+}
+
+.infoMusic hr {
+  border: none;
+  height: 2px;
+  margin: 8px 0px 8px -10px;
+  background-color: #e4f0f6;
+}
+
+.pageMusicRight {
+  height: auto;
+  width: 35%;
+}
+
+.pageMusicRight h1 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.logoPageMusic {
+  text-align: center;
+}
+
+.pageMusicRight img {
+  margin-top: 20px;
+  width: 60%;
+}
+
+@media (max-width: 1200px) {
+  .pageMusicContent {
+    padding: 20px 10px 20px 10px;
+  }
+
+  .titlePageMusic {
+    padding: 5px;
+  }
+
+  .pageMusicLeft {
+    margin: 0px 5px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .pageMusicContent {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .pageMusicLeft {
+    width: 100%;
+  }
+
+  .titlePageMusic {
+    padding-left: 20px;
+  }
+
+  .pageMusicRight {
+    width: 100% !important;
+  }
+
+  #pageMusicRight img {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .iframePageMusic iframe {
+    width: 320px;
+    height: 420px;
+  }
+
+  .titlePageMusic {
+    text-align: center;
+  }
+
+  .pageMusicLeft {
+    width: 420px;
+  }
+
+  .titlePageMusic {
+    padding-left: 0px;
+  }
+
+  .pageMusicLeft {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .pageMusicLeft {
+    width: 100%;
+  }
+
+  .infoMusic {
+    padding: 15px;
+  }
+
+  .pageMusicContent {
+    margin: 0;
+  }
+}
+
+.button1 {
+  background-color: #8164b8;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  margin-top: 15px;
+  padding: 8px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  min-width: 130px;
+}
+
+.button2 {
+  min-width: 130px;
+  background-color: #f9f9f9;
+
+  border-radius: 10px;
+  background-color: #8164b8;
+  margin-top: 15px;
+  margin-right: -10px;
+  padding: 6px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.button1:hover {
+  background-color: #371674;
+  cursor: pointer;
+}
+
+.button2:hover {
+  background-color: #371674;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* header features */
+.containerfeatures {
+  width: auto;
+  border: 0em;
+  padding: 0em;
+  overflow: auto;
+  margin: auto;
+  background: #f9f9f9;
+  padding-top: 75px;
+}
+
+/* dang bai hat */
+@media screen and (min-width: 600px) {
+  .inputleft {
+    width: 48%;
+    float: left;
+  }
+
+  .inputright {
+    width: 48%;
+    float: right;
+  }
+
+  .inputleft input {
+    width: 95%;
+    margin: 0px 0px -5px 20px;
+  }
+
+  .inputright input {
+    width: 95%;
+    margin: 0px 15px -5px 0px;
+  }
+
+  .inputleft p {
+    margin: 15px 0px 0px 20px;
+  }
+
+  .inputright p {
+    margin: 15px 15px 0px 0px;
+  }
+
+  .longinput,
+  .longtextarea {
+    width: 95%;
+  }
+
+  #linkadd {
+    padding-top: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .huongdan {
+    float: right;
+    width: 30%;
+    margin: 20px 20px 20px 0px;
+  }
+
+  #upload {
+    width: 64%;
+    float: left;
+    margin: 20px 0px 20px 20px;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1023px) {
+  .huongdan {
+    max-width: 750px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  #upload {
+    max-width: 750px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  .huongdan {
+    margin: 20px;
+  }
+
+  #upload {
+    margin: 20px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 599px) {
+  .huongdan {
+    margin: 20px;
+  }
+
+  #upload {
+    margin: 20px;
+  }
+
+  #upload p {
+    margin: 0px 15px 5px 20px;
+  }
+
+  .inputleft {
+    padding-top: 15px;
+  }
+
+  .inputleft input,
+  .inputright input,
+  .longinput,
+  .longtextarea {
+    width: 92%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .huongdan {
+    margin: 20px;
+  }
+
+  #upload {
+    margin: 20px;
+  }
+
+  #upload p {
+    margin: 0px 15px 5px 20px;
+  }
+
+  .inputleft {
+    padding-top: 15px;
+  }
+
+  .inputleft input,
+  .inputright input,
+  .longinput,
+  .longtextarea {
+    width: 88%;
+  }
+}
+
+.fillImage img {
+  width: 100%;
+  margin-bottom: -3px;
+  border-top: 20px solid #f9f9f9;
+}
+
+.huongdan {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#upload {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: center;
+  color: #094c72;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.huongdan p {
+  padding: 15px 20px 20px 25px;
+  font-size: 13px;
+  text-align: justify;
+}
+
+#upload p {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.halfinput {
+  margin: 0px 15px 10px 20px;
+  border-radius: 3px;
+  border-color: rgb(160, 158, 158) !important;
+}
+
+.inputleft input {
+  padding: 2px 2px 2px 8px;
+  border: 1px solid black;
+}
+
+.inputright input {
+  padding: 2px 2px 2px 8px;
+  border: 1px solid black;
+}
+
+.longinput {
+  margin: 0px 15px 10px 20px;
+  padding: 2px 2px 2px 8px;
+  border: 1px solid black;
+  border-radius: 3px;
+  border-color: rgb(160, 158, 158) !important;
+}
+
+.clearfloat {
+  float: none;
+  clear: both;
+}
+
+.longtextarea {
+  height: 150px;
+  margin: 0px 15px 20px 20px;
+  padding: 8px 2px 2px 8px;
+  border: 1px solid black;
+  border-radius: 3px;
+  border-color: rgb(160, 158, 158) !important;
+}
+
+input,
+textarea {
+  outline: unset;
+}
+
+input:hover,
+textarea:hover {
+  border-color: rgb(77, 148, 170) !important;
+}
+
+#linkadd {
+  margin: 0px 15px 0px 20px;
+}
+
+#lyricsadd {
+  margin: 0px 15px 5px 20px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.result {
+  text-align: center;
+}

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:image" content="https://i.imgur.com/rxh17is.jpg" />
+    <title>Blog Music Vip Pro</title>
+    <link rel="stylesheet" href="/main.css" />
+    <script
+      src="https://kit.fontawesome.com/dfb7590c37.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <style>
+    :root {
+      --primary-color: #f9a931;
+      --text-color: #333;
+    }
+
+    /*header*/
+
+    .main-body {
+      padding: 30px 20px;
+      background-color: rgba(50, 9, 74, 0.893);
+    }
+    .nav-custom {
+      height: 75px;
+    }
+    /*body*/
+    .body-content {
+      height: 100vh;
+    }
+
+    .dashboard {
+      padding: 16px 16px 14px;
+      background-color: #fff;
+      top: 0;
+      width: 100%;
+      max-width: 900px;
+      border-bottom: 1px solid #ebebeb;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dashboard::before {
+      content: "";
+      background-color: #000000a2;
+      background-image: url("/IMAGE/anhnen.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      background-size: cover;
+      height: 400px;
+      width: 900px;
+      left: 0;
+      top: 0;
+      opacity: 0.2;
+    }
+    .dashboard::after {
+      content: "";
+      background-color: #00000021;
+      position: absolute;
+      background-size: cover;
+      height: 410px;
+      width: 900px;
+      left: 0;
+      top: 0;
+    }
+
+    /* HEADER-BODY*/
+    .header-body {
+      text-align: center;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-body h4 {
+      color: var(--primary-color);
+      font-size: 12px;
+    }
+
+    .header-body h2 {
+      color: var(--text-color);
+      font-size: 20px;
+    }
+
+    /* CD */
+    .cd {
+      display: flex;
+      margin: auto;
+      width: 200px;
+    }
+
+    .cd-thumb {
+      width: 100%;
+      height: 100%;
+      padding-top: 100%;
+      border-radius: 50%;
+      background-size: cover;
+      margin: auto;
+      position: relative;
+      border: 1px solid red;
+      background-color: transparent;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .cd-thumb::before {
+      content: "";
+      background-image: url("/IMAGE/decorimg3.jpeg");
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      background-size: cover;
+      height: 300px;
+      width: 300px;
+      top: 0;
+      left: 0;
+    }
+
+    /* PLAYLIST */
+
+    .top-music {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .top-music .icon-pause {
+      display: none;
+    }
+
+    .top-music.playing .icon-pause {
+      display: inline-block;
+    }
+
+    .top-music.playing .icon-play {
+      display: none;
+    }
+
+    /* CONTROL */
+    .top-music .control {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 18px 0 8px 0;
+    }
+
+    .top-music .control .btn {
+      color: #fff;
+      padding: 18px;
+      font-size: 18px;
+    }
+
+    .top-music .control .btn.active {
+      color: var(--primary-color);
+    }
+
+    .top-music .control .btn-toggle-play {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      font-size: 24px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary-color);
+    }
+
+    .btn-repeat i:hover {
+      color: var(--primary-color);
+    }
+
+    .top-music .progress {
+      width: 100%;
+      -webkit-appearance: none;
+      height: 6px;
+      background: #ffffff;
+      outline: none;
+      -webkit-transition: 0.2s;
+      transition: opacity 0.2s;
+      border-radius: 15px;
+    }
+
+    .top-music .progress::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 6px;
+      background-color: var(--primary-color);
+      cursor: pointer;
+      border-radius: 15px;
+    }
+
+    .song {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      background-color: #fff;
+      padding: 8px 16px;
+      border-radius: 5px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .song.active {
+      background-color: var(--primary-color);
+    }
+
+    .song:active {
+      opacity: 0.8;
+    }
+
+    .song.active .option,
+    .song.active .author,
+    .song.active .title {
+      color: #fff;
+    }
+
+    .song .thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-size: cover;
+      margin: 0 8px;
+    }
+
+    .song .body {
+      flex: 1;
+      padding: 0 16px;
+    }
+
+    .song .title {
+      font-size: 18px;
+      color: var(--text-color);
+    }
+
+    .song .author {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .song .option {
+      padding: 16px 8px;
+      color: #999;
+      font-size: 18px;
+    }
+  </style>
+  <body>
+    <!-- Hello, this is header -->
+
+    <div id="header" class="animate__animated animate__fadeInDown">
+      <div id="listMenuID" class="listMenu">
+        <ul>
+          <li class="theLoaiID">
+            <p>Thể loại</p>
+            <ol class="theLoai viewTL"></ol>
+          </li>
+          <li class="uploadID">Đăng bài hát</li>
+          <li class="requestID">Yêu cầu bài hát</li>
+          <li class="suggestionID">Góp ý</li>
+          <li class="loginID">Đăng nhập</li>
+          <li class="accountID">
+            <p class="nameDisplay">Tên người dùng</p>
+            <ol class="account viewAccount">
+              <li class="yeuThichID">Danh sách yêu thích</li>
+              <li class="signoutID">Đăng xuất</li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+      <div class="leftHeader">
+        <i class="iconHeader fa fa-bars" id="iconMenu" onclick="showMenu()"></i>
+        <a id="logo" class="viewLogo" href="/" style="text-decoration: none">
+          <i class="fas fa-headphones-alt"></i> BLOG ÂM NHẠC</a
+        >
+        <div id="viewSearchID" class="viewSearch">
+          <input
+            type="search"
+            id="searchHomePage"
+            placeholder="Tìm theo bài hát hoặc ca sĩ"
+            autocomplete="off"
+          />
+          <ol id="searchMusic"></ol>
+        </div>
+        <i
+          class="viewIconSearch iconHeader fa fa-search"
+          id="iconSearch"
+          onclick="viewSearchHeader()"
+        ></i>
+      </div>
+      <div class="rightHeader" id="rightMenuID">
+        <a class="accountID">
+          <p class="nameDisplay">Tên người dùng</p>
+          <ol class="account">
+            <li class="yeuThichID">Danh sách yêu thích</li>
+            <li class="signoutID">Đăng xuất</li>
+          </ol>
+        </a>
+        <a class="loginID">Đăng nhập</a>
+        <a class="suggestionID">Góp ý</a>
+        <a class="requestID">Yêu cầu bài hát</a>
+        <a
+          class="uploadID"
+          style="text-decoration: none"
+          href="/formUploadMusic"
+          >Đăng bài hát</a
+        >
+        <a class="theLoaiID">
+          <p>Thể loại</p>
+          <ol class="theLoai scale-up-ver-top"></ol>
+        </a>
+      </div>
+    </div>
+
+    <div id="pageMusic" class="container">
+      <div class="pageMusicContent">
+        <div class="pageMusicLeft">
+          <div class="titlePageMusic">
+            <div class="main">
+              <div class="body-content">
+                <div class="row main-body">
+                  <div class="content-music col-4">
+                    <div class="play-audio">
+                      <div class="player">
+                        <!-- Dashboard -->
+                        <div class="dashboard">
+                          <!-- Header -->
+                          <div class="header-body">
+                            <h4>Đang phát:</h4>
+                            <h2><%= song.name%></h2>
+                          </div>
+
+                          <!-- CD -->
+                          <div class="cd">
+                            <div class="cd-thumb"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Playlist -->
+                  <div class="playlist col-8">
+                    <div class="top-music">
+                      <!-- Control -->
+                      <div class="control">
+                        <div class="btn btn-repeat">
+                          <i class="fas fa-redo text-white"></i>
+                        </div>
+                        <div class="btn btn-prev">
+                          <i class="fas fa-step-backward text-white"></i>
+                        </div>
+                        <div class="btn btn-toggle-play">
+                          <i class="fas fa-pause icon-pause"></i>
+                          <i class="fas fa-play icon-play"></i>
+                        </div>
+                        <div class="btn btn-next">
+                          <i class="fas fa-step-forward text-white"></i>
+                        </div>
+                        <div class="btn btn-random">
+                          <i class="fas fa-random text-white"></i>
+                        </div>
+                      </div>
+                      <input
+                        id="progress"
+                        class="progress"
+                        type="range"
+                        value="0"
+                        step="1"
+                        min="0"
+                        max="100"
+                      />
+                      <audio
+                        id="audio"
+                        src="/uploads/1717068744375-1717068712480-lannaychacduoc.mp3"
+                      ></audio>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="infoMusic">
+            <a><strong>Sáng tác: </strong></a>
+            <a class="authorMusic"></a><br />
+            <a><strong>Lời bài hát: </strong></a>
+            <hr />
+            <p class="lyricsMusic">
+              <%- song.lyrics.replace(/\n/g, '<br />') %>
+            </p>
+            <div></div>
+          </div>
+        </div>
+        <div class="pageMusicRight">
+          <div id="musicSameGenre">
+            <div>
+              <h1 class="headingclickable"></h1>
+            </div>
+            <div class="body xephang">
+              <ol id="musicSame">
+                <%count = 1%> <% popularSongs.forEach(song => { %>
+                <li>
+                  <p class="sttMusic"><%= count %></p>
+                  <p class="name">
+                    <a
+                      href="/pageMusic/<%= song.id %>"
+                      style="text-decoration: none; color: #000"
+                      ><%= song.name %></a
+                    >
+                  </p>
+                  <%count++%>
+                  <p class="yeuThich songYT<%= song.id %> songYT20">
+                    <i
+                      class="icon<%= song.id %> far fa-heart"
+                      aria-hidden="true"
+                    ></i>
+                  </p>
+                  <br />
+                  <p class="singer"><%= song.singer %></p>
+                  <p class="countSeen">
+                    <i class="fas fa-headphones-alt" aria-hidden="true"></i><%=
+                    song.countSeen %>
+                  </p>
+                  <hr />
+                </li>
+
+                <% }); %>
+              </ol>
+              <!-- <div class="xemthem" id="xemThemMusicsSame">
+                              <p>Xem thêm</p>
+                          </div> -->
+              <div id="changemusicSame" class="changeList">
+                <p id="countmusicSame" class="countList">1</p>
+              </div>
+            </div>
+          </div>
+          <div class="logoPageMusic">
+            <img src="/IMAGE/logo3.png" alt="logo thu vien am nhac" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const $ = document.querySelector.bind(document);
+        const $$ = document.querySelectorAll.bind(document);
+        const progress = $("#progress");
+        const player = $(".player");
+        const audio = $("#audio");
+        const playBtn = $(".btn-toggle-play");
+        const iconPlay = $(".icon-play");
+        const iconPause = $(".icon-pause");
+        const repeatBtn = $(".btn-repeat");
+        const cdThumb = $(".cd-thumb");
+        // Check if audio element exists
+        if (!audio) {
+          console.error("Audio element not found");
+          return;
+        }
+
+        // Check if audio source is valid
+        audio.addEventListener("error", function (e) {
+          console.error("Error loading audio source: ", e);
+        });
+
+        // Object to handle music player
+        const app = {
+          isPlaying: false,
+          isRepeat: false,
+          config: {},
+          setConfig: function (key, value) {
+            this.config[key] = value;
+          },
+          handleEvents: function () {
+            const _this = this;
+
+            // Play / Pause button click
+            playBtn.onclick = function () {
+              if (_this.isPlaying) {
+                audio.pause();
+              } else {
+                audio.play().catch((error) => {
+                  console.error("Error playing audio: ", error);
+                });
+              }
+            };
+
+            // When the song is played
+            audio.onplay = function () {
+              _this.isPlaying = true;
+              player.classList.add("playing");
+              iconPlay.style.display = "none";
+              iconPause.style.display = "inline-block";
+              cdThumbAnimate.play();
+            };
+
+            // When the song is paused
+            audio.onpause = function () {
+              _this.isPlaying = false;
+              player.classList.remove("playing");
+              iconPlay.style.display = "inline-block";
+              iconPause.style.display = "none";
+              cdThumbAnimate.pause();
+            };
+            // Khi tiến độ bài hát thay đổi
+            // When the song progress changes
+            audio.ontimeupdate = function () {
+              // Trả về độ dài hiện tại của audio
+              if (audio.duration) {
+                const progressPercent = Math.floor(
+                  (audio.currentTime / audio.duration) * 100
+                );
+                progress.value = progressPercent;
+              }
+            };
+
+            // Xử lý khi tua song
+            // Handling when seek
+            progress.onchange = function (e) {
+              const seekTime = (audio.duration / 100) * e.target.value;
+              audio.currentTime = seekTime;
+            };
+            // Xử lý lặp lại một song
+            // Single-parallel repeat processing
+            repeatBtn.onclick = function (e) {
+              _this.isRepeat = !_this.isRepeat;
+              _this.setConfig("isRepeat", _this.isRepeat);
+              audio.currentTime = 0;
+            };
+            const cdThumbAnimate = cdThumb.animate(
+              [{ transform: "rotate(360deg)" }],
+              {
+                duration: 10000, // 10 seconds
+                iterations: Infinity,
+              }
+            );
+            cdThumbAnimate.pause();
+          },
+
+          start: function () {
+            // Handle all events
+            this.handleEvents();
+          },
+        };
+
+        app.start();
+      });
+    </script>
+    <script>
+      // Lấy danh sách bài hát và bài hát hiện tại từ dữ liệu nhúng
+      const songs = <%- JSON.stringify(popularSongs) %>;
+      const currentSongId = <%= song.id || 0 %>;
+
+      let currentSongIndex = songs.findIndex(song => song.id === currentSongId);
+       console.log("vào được đây rồi nha");
+       console.log(currentSongId);
+      // Cập nhật bài hát hiện tại
+
+      function updateSong(song) {
+        const nameAudio = song.iframeUrl;
+        const fileName = nameAudio.split("\\").pop();
+        console.log(fileName);
+        document.querySelector('.header-body h2').innerText = song.name;
+        document.querySelector('#audio').src = `/uploads/${fileName}`;
+        document.querySelector('.lyricsMusic').innerHTML = song.lyrics.replace(/\n/g, '<br />');
+      }
+
+      // Xử lý sự kiện khi nhấn nút "Next"
+      document.querySelector('.btn-next').addEventListener('click', () => {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        updateSong(songs[currentSongIndex]);
+      });
+
+      // Xử lý sự kiện khi nhấn nút "Previous"
+      document.querySelector('.btn-prev').addEventListener('click', () => {
+        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+        updateSong(songs[currentSongIndex]);
+      });
+
+      // Khởi tạo bài hát đầu tiên khi trang được tải
+      updateSong(songs[currentSongIndex]);
+    </script>
+  </body>
+</html>
